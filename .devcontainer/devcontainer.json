@@ -1,0 +1,31 @@
+{
+  "build": {
+    "dockerfile": "../Dockerfile.dev",
+    "context": ".."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/nix:1": {
+      "useAttributePath": true,
+      "packages": "nixpkgs.neovim, nixpkgs.zoxide, nixpkgs.nushell, nixpkgs.nodejs_23, nixpkgs.lazygit, nixpkgs.fzf, nixpkgs.ripgrep, nixpkgs.stow"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "terminal.integrated.shell.linux": "/bin/bash"
+      },
+      "extensions": [
+        "ms-python.python"
+      ]
+    }
+  },
+  "runArgs": [
+    "--network=host"
+  ],
+  "workspaceFolder": "/workspace",
+  "remoteUser": "researcher",
+  "mounts": [
+  ]
+}
+
