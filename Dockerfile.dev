@@ -1,0 +1,17 @@
+FROM node:22
+
+WORKDIR /workspace
+
+RUN apt-get update && apt-get install -y \
+    git \
+    tree \
+    stow \
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir -p /out /in
+
+RUN useradd -ms /bin/bash researcher && mkdir -p /home/researcher/.config && chown -R researcher:researcher /home/researcher
+
+USER researcher
+
+CMD ["/bin/bash"]
+
