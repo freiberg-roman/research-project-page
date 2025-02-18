@@ -1,3 +1,4 @@
+import { styled } from '@pigment-css/react';
 import { Mail, Activity ,Twitter, GitHub, Layers, Cpu, Coffee, Archive } from "react-feather";
 
 const icons = {
