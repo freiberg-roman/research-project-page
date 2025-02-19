@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@pigment-css/react": "latest",
+    "framer-motion": "^12.4.5",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
@@ -22,7 +23,7 @@
     "@types/react-dom": "latest",
     "eslint": "latest",
     "eslint-config-next": "latest",
-    "typescript": "latest",
-    "react-feather": "^2.0.10"
+    "react-feather": "^2.0.10",
+    "typescript": "latest"
   }
 }

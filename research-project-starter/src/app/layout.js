@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { Inter } from "next/font/google";
 import '@pigment-css/react/styles.css';
 import { globalCss } from '@pigment-css/react';
@@ -60,12 +59,12 @@ globalCss`
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Research Project Webpage Starter',
   description: 'Generated your next research project webpage!',
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
         <body className={inter.className}>{children}</body>
