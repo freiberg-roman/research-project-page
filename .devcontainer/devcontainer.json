@@ -26,6 +26,7 @@
   "workspaceFolder": "/workspace",
   "remoteUser": "researcher",
   "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
   ]
 }
 
