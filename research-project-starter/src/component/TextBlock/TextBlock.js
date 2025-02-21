@@ -2,13 +2,13 @@ import React from "react";
 import { styled } from "@pigment-css/react";
 import { SIZES } from "../../util/const";
 
-function TextBlock({title, children}) {
+function TextBlock({ title, children }) {
   return (
     <Layout>
       <Card>
-        <Header>{ title }</Header>
+        <Header>{title}</Header>
         <Paragraph>
-          { children }
+          {children}
         </Paragraph>
       </Card>
     </Layout>

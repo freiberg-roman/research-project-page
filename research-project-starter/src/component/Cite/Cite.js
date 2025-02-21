@@ -1,9 +1,10 @@
 "use client";
+import { motion } from "framer-motion";
 import React, { useState } from "react";
-import styled from "styled-components";
-import { SIZES } from "@/utils/const";
+import { styled, css } from "@pigment-css/react";
+import { SIZES } from "../../util/const";
 
-const BibtexCard = ({
+const CiteUs = ({
   entryType = "article",
   citationKey = "yourKey",
   title,
@@ -52,9 +53,15 @@ const BibtexCard = ({
       <Card>
         <HeaderContainer>
           <Header>Cite Us</Header>
-          <CopyButton onClick={handleCopy}>
-            {copied ? "Copied!" : "Copy"}
-          </CopyButton>
+          <motion.button className={copyButton} onClick={handleCopy}
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.2 },
+            }}
+            whileTap={{ scale: 0.8 }}
+          >
+            Copy
+          </motion.button>
         </HeaderContainer>
         <Cite>{bibtexString}</Cite>
       </Card>
@@ -69,18 +76,19 @@ const HeaderContainer = styled.div`
   margin-bottom: 1rem;
 `;
 
-const CopyButton = styled.button`
-  background: #0070f3;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.9rem;
-  &:hover {
-    background: #005bb5;
-  }
-`;
+const copyButton = css({
+  background: 'white',
+  display: 'inline-flex',
+  alignItems: 'center',
+  border: '1px solid #eaeaea',
+  borderRadius: SIZES[8],
+  padding: `${SIZES[16]} ${SIZES[24]}`,
+  color: 'var(--primary-color)',
+  textDecoration: 'none',
+  ':hover': {
+    border: '1px solid black',
+  },
+});
 
 const Cite = styled.pre`
   background-color: #f5f5f5;
@@ -93,9 +101,9 @@ const Cite = styled.pre`
 `;
 
 const Header = styled.h2`
-  font-weight: 600;
-  font-size: 1.5rem;
-  margin: 0;
+  font-weight: 100;
+  font-size: 2;
+  margin-bottom: 0.5rem;
 `;
 
 const Layout = styled.div`
@@ -117,10 +125,10 @@ const Card = styled.div`
   padding: 1.5rem;
   text-align: left;
   color: inherit;
-  border: 1px solid #eaeaea;
   border-radius: 10px;
   width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  border-bottom: 1px solid #eaeaea;
 `;
 
-export default BibtexCard;
+export default CiteUs;
