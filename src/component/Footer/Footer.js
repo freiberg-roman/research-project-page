@@ -6,11 +6,6 @@ function Footer() {
   return (
     <FooterWrapper>
       <Paragraph>Find me on</Paragraph>
-      <a href="mailto:me@romanfreiberg.com">
-        <LogoSpan>
-          <Icon size="24" id="mail"></Icon>
-        </LogoSpan>
-      </a>
       <a href="https://github.com/freiberg-roman">
         <LogoSpan>
           <Icon size="24" id="github"></Icon>

@@ -17,7 +17,15 @@ export default function Home() {
           authors="First Author, Second Author, Third Author, Fourth Author"
           publishedAt="Your International Conference (2025)"
         />
-        <ProjectLinks />
+        <ProjectLinks
+          links={
+            [
+              { iconId: "archive", label: "Paper", href: "https://example.com/paper" },
+              { iconId: "github", label: "Code", href: "https://example.com/code" },
+              { iconId: "twitter", label: "Twitter", href: "https://example.com/twitter" },
+            ]
+          }
+        />
         <TextBlock title="Abstract">
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
           invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
