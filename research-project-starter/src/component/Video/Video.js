@@ -1,28 +1,77 @@
-import React from "react";
+"use client";
+import React, { useState, useRef, useEffect } from "react";
 import { styled } from "@pigment-css/react";
 import { SIZES } from "../../util/const";
 
+function LazyVideo({ videoSrc, videoAlt }) {
+  const [isInView, setIsInView] = useState(false);
+  const containerRef = useRef(null);
 
-function VideoBlock() {
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" } // load slightly before the video enters view
+    );
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <Layout>
-    <Card>
-      <Header>Demo Video</Header>
-      <ImageSpan>
-        <video
+    <VideoContainer ref={containerRef}>
+      {isInView ? (
+        <Video
           autoPlay
           controls
           muted
           loop
           playsInline
-          src="/video.mp4"
-          alt="Demo video"
+          src={videoSrc}
+          alt={videoAlt}
         />
-      </ImageSpan>
-    </Card>
+      ) : (
+        <Placeholder />
+      )}
+    </VideoContainer>
+  );
+}
+
+const VideoContainer = styled.div`
+  width: 100%;
+  height: auto;
+  position: relative;
+`;
+
+const Video = styled.video`
+  width: 100%;
+  height: auto;
+  display: block;
+`;
+
+const Placeholder = styled.div`
+  width: 100%;
+  height: 200px; /* adjust based on expected video dimensions */
+  background-color: #eaeaea;
+`;
+
+function VideoBlock({ title, videoSrc, videoAlt }) {
+  return (
+    <Layout>
+      <Card>
+        <Header>{title}</Header>
+        <ImageSpan>
+          <LazyVideo videoSrc={videoSrc} videoAlt={videoAlt} />
+        </ImageSpan>
+      </Card>
     </Layout>
   );
 }
+
 const ImageSpan = styled.span`
   margin-top: 2rem;
   margin-bottom: 1rem;
@@ -30,14 +79,12 @@ const ImageSpan = styled.span`
 
 const Header = styled.h2`
   font-weight: 100;
-  font-size: 2;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
 `;
 
 const Layout = styled.div`
-
   margin-bottom: ${SIZES[60]};
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,9 +98,8 @@ const Layout = styled.div`
 `;
 
 const Card = styled.div`
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 1.5rem;
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
   text-align: left;
   color: inherit;
   text-decoration: none;
@@ -63,3 +109,4 @@ const Card = styled.div`
 `;
 
 export default VideoBlock;
+

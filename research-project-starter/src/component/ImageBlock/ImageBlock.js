@@ -3,15 +3,15 @@ import Image from "next/image";
 import { styled } from "@pigment-css/react";
 import { SIZES } from "../../util/const";
 
-function ImageBlock() {
+function ImageBlock({ title, imageSrc, children }) {
     return (
         <Layout>
             <Card>
-                <Header>Method Overview</Header>
+                <Header>{title}</Header>
                 <ImageSpan>
                     <Image
                         priority
-                        src="/figure.png"
+                        src={imageSrc}
                         alt="Method overview"
                         layout="responsive"
                         width={800}
@@ -19,14 +19,7 @@ function ImageBlock() {
                     />
                 </ImageSpan>
                 <Paragraph>
-                    Overview of open and closed gripper configurations. Scene and gripper point clouds are encoded through an
-                    equivariant U‑Net, producing multi‑scale hierarchical equivariant descriptor field (EDF) features.
-                    A multi‑scale tensor field then computes query positions and EDF features using the
-                    Farthest Point Sampling (FPS) algorithm. The featurized point clouds and
-                    query tokens are time‑conditioned via an equivariant  FiLM layer. The tokens query
-                    features in the scene’s hierarchical point cloud, which the
-                    score head uses to predict a diffusion‑based pose estimate. The resulting pose estimate is
-                    applied as an equivariant transform to the EDF features of the query tokens.
+                    {children}
                 </Paragraph>
             </Card>
         </Layout>

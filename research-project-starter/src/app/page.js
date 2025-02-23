@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { styled } from '@pigment-css/react';
-import Footer from '@/component/Footer';
-import ProjectHeader from '@/component/ProjectHeader';
+import Footer from '../component/Footer';
+import ProjectHeader from '../component/ProjectHeader';
 import TextBlock from '../component/TextBlock';
 import ProjectLinks from '../component/ProjectLink';
 import VideoBlock from '../component/Video/Video';
@@ -30,8 +30,26 @@ export default function Home() {
           At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
           sanctus est Lorem ipsum dolor sit amet.
         </TextBlock>
-        <ImageBlock></ImageBlock>
-        <VideoBlock></VideoBlock>
+        <ImageBlock
+          title="Method Overview"
+          imageSrc="/figure.png" // Change this to the path of your image under the public folder
+        >
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+          invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+          accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
+          Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+          sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+          sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+          At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+          sanctus est Lorem ipsum dolor sit amet.
+        </ImageBlock>
+        <VideoBlock
+          title="Demo Video"
+          videoSrc="/video.mp4" // Change this to the path of your video under the public folder
+          videoAlt0="Demo Video"
+        />
         <CiteUs
           entryType="article"
           citationKey="yourKey"
@@ -40,7 +58,7 @@ export default function Home() {
           journal="Journal of Research"
           year="2025"
           publisher="Your Publisher"
-        ></CiteUs>
+        />
       </Main>
       <Footer />
     </>
