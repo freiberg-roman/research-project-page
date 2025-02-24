@@ -1,38 +1,25 @@
-# Pigment CSS - Next.js App Router with TypeScript example project
+# Research Project Page Starter
+Starter template with a modern tech stack for research project pages.
+No need to learn React, just update the content under the `src/app/page.js` file
+and deploy using GitHub pages.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped using [`create-next-app`](https://github.com/vercel/next.js/tree/HEAD/packages/create-next-app), with TypeScript and Pigment CSS, a zero-runtime CSS-in-JS library, installed.
+## Usage
+- Clone as template and update the content under `src/app/page.js` file
+- Add as many `TextBlock`, `ImageBlock`, `VideoBlock` etc. components as needed
+- Add your images and videos under the `public` folder
+- Link the `public` assets in the `src/app/page.js` file
+- Deploy using GitHub pages
 
-## How to use
+## Tech Stack
+- [Next.js](https://nextjs.org/)
+- [Pigment-CSS](https://github.com/mui/pigment-css)
+- [Framer Motion](https://framermotion.framer.website)
 
-Download the example [or clone the repo](https://github.com/mui/pigment-css):
+## Contributions
+Contributions are welcome. If you have created some custom components for your
+project and want to share, please create a pull request. There are no hard rules,
+but we try to keep the style consistent and reduce any additional dependencies.
 
-<!-- #default-branch-switch -->
+## License
+MIT License, but please keep the footer component as is :)
 
-```bash
-curl https://codeload.github.com/mui/pigment-css/tar.gz/master | tar -xz --strip=2  pigment-css-master/examples/pigment-css-nextjs-ts
-cd pigment-css-nextjs-ts
-```
-
-Install it and run:
-
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-or:
-
-<!-- #default-branch-switch -->
-
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/pigment-css/tree/master/examples/pigment-css-nextjs-ts)
-
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/mui/pigment-css/tree/master/examples/pigment-css-nextjs-ts)
-
-## Learn more
-
-To learn more about this example:
-
-- [Pigment CSS documentation](https://github.com/mui/pigment-css/blob/master/README.md) - learn more about Pigment CSS features and APIs.
-- [Next.js documentation](https://nextjs.org/docs) - learn about Next.js features and APIs.
