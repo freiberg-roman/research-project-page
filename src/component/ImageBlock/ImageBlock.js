@@ -3,7 +3,10 @@ import Image from "next/image";
 import { styled } from "@pigment-css/react";
 import { SIZES } from "../../util/const";
 
+
 function ImageBlock({ title, imageSrc, children }) {
+    const isProd = process.env.NODE_ENV === "production";
+    const basePath = isProd ? process.env.NEXT_PUBLIC_BASE_PATH : "";
     return (
         <Layout>
             <Card>
@@ -11,7 +14,7 @@ function ImageBlock({ title, imageSrc, children }) {
                 <ImageSpan>
                     <Image
                         priority
-                        src={imageSrc}
+                        src={basePath + imageSrc}
                         alt="Method overview"
                         layout="responsive"
                         width={800}

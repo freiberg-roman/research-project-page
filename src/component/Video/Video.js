@@ -60,12 +60,15 @@ const Placeholder = styled.div`
 `;
 
 function VideoBlock({ title, videoSrc, videoAlt }) {
+  const isProd = process.env.NODE_ENV === "production";
+  const basePath = isProd ? process.env.NEXT_PUBLIC_BASE_PATH : "";
+
   return (
     <Layout>
       <Card>
         <Header>{title}</Header>
         <ImageSpan>
-          <LazyVideo videoSrc={videoSrc} videoAlt={videoAlt} />
+          <LazyVideo videoSrc={basePath + videoSrc} videoAlt={videoAlt} />
         </ImageSpan>
       </Card>
     </Layout>
