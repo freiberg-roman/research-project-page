@@ -2,6 +2,7 @@
 Starter template with a modern tech stack for research project pages.
 No need to learn React, just update the content under the `src/app/page.js` file
 and deploy using GitHub pages.
+Template example page: [https://freiberg-roman.github.io/research-project-page/](https://freiberg-roman.github.io/research-project-page/)
 
 ## Usage
 - Clone as template and update the content under `src/app/page.js` file
