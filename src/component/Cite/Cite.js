@@ -85,7 +85,7 @@ const copyButton = css({
   padding: `${SIZES[16]} ${SIZES[24]}`,
   color: 'var(--primary-color)',
   textDecoration: 'none',
-  ':hover': {
+  '&:hover': {
     border: '1px solid black',
   },
 });
