@@ -10,6 +10,7 @@ Template example page: [https://freiberg-roman.github.io/research-project-page/]
 - Add your images and videos under the `public` folder
 - Link the `public` assets in the `src/app/page.js` file
 - Update the `.env` file to your project name
+- (optional) update the `favicon.ico`
 - Deploy using GitHub pages
 
 ## Tech Stack
@@ -20,7 +21,7 @@ Template example page: [https://freiberg-roman.github.io/research-project-page/]
 ## Contributions
 Contributions are welcome. If you have created some custom components for your
 project and want to share, please create a pull request. There are no hard rules,
-but we try to keep the style consistent and reduce any additional dependencies.
+but try to keep the style consistent and reduce any additional dependencies.
 
 ## License
 MIT License, but please keep the footer component as is :)
