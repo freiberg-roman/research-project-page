@@ -9,6 +9,7 @@ Template example page: [https://freiberg-roman.github.io/research-project-page/]
 - Add as many `TextBlock`, `ImageBlock`, `VideoBlock` etc. components as needed
 - Add your images and videos under the `public` folder
 - Link the `public` assets in the `src/app/page.js` file
+- Update the `.env` file to your project name
 - Deploy using GitHub pages
 
 ## Tech Stack
